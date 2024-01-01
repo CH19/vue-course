@@ -2,21 +2,20 @@
 import appQuote from './components/app-quote.vue';
 import appSaying from './components/app-saying.vue';
 import appReload from './components/app-reload.vue';
-import algo from './components/algo.vue';
-import {ref, provide, watch, onUpdated} from 'vue';
-const data = ref('xd')
-const quoteActualization = ref('');
-const actualizar = (data) => {
-    quoteActualization.value = data
-};
 
+import {getDataJson, getData} from './services/quotes';
+import {ref, onMounted} from 'vue';
+const quote = ref('');
+  onMounted(() => {
+    getDataJson().then(e => {quote.value = e.data.joke;}).catch(e=> console.error(e));
+  });
+const actualizar = (data) => {
+    quote.value = data
+};
 </script>
 <template>
-    <input type="text" v-model="data">
-    {{ data }}
-    <algo />
     <appReload @quote-reload="actualizar"/>
-    <appQuote :new-quote="quoteActualization" />
+    <appQuote :new-quote="quote" />
     <appSaying />
     
 </template>

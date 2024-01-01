@@ -1,17 +1,13 @@
 <script  setup>
 import {getData, getDataJson} from '../services/quotes';
-import {ref} from 'vue';
 const emits = defineEmits(['quoteReload']);
-const actualQuote = ref('');
 const actualizarQuote = () => {
  
     getDataJson(   {
     "data":{
         "joke": "There is no chin behind Chuck Norris' beard. There is only another fist."
     }
-}).then(e => {actualQuote.value = e.data.joke;
-    emits('quoteReload', actualQuote.value);
-    }).catch(e=> console.error(e));
+}).then(e => emits('quoteReload', e.data.joke)).catch(e=> console.error(e));
 };
 </script>
 <template>

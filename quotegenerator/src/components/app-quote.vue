@@ -1,26 +1,15 @@
 <script setup>
-  import {ref, onMounted, computed} from 'vue'
-  import {getDataJson, getData} from '../services/quotes';
   const {newQuote} = defineProps({
     newQuote: {
       type: String,
       required: true,
+      default: 'Hola imagina que esta es una frase graciosa de chuck norris'
     }
   });
-  const quote = ref(newQuote);
-  onMounted(() => {
-
-    getDataJson().then(e => {quote.value = e.data.joke;}).catch(e=> console.error(e));
-  });
-  const actualQuote = computed(()=> {
-    console.log(`new lenght = ${newQuote.length}`);
-    return newQuote.length > 4 ? newQuote : quote;
-  })
 </script>
 <template>
-  {{ newQuote }}
   <div class="quoteText">
-    <p>{{ actualQuote }}</p>
+    <p> "{{ newQuote }}" </p>
   </div>
 </template>
 <style scoped>
@@ -35,5 +24,11 @@
         height: 10rem;
         display: grid;
         place-items: center;
+        width: 600px;
+}
+@media screen and (max-width: 600px) {
+  .quoteText{
+    max-width: 300px;
+  }
 }
 </style>
