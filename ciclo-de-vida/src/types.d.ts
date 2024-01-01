@@ -1,5 +1,6 @@
 export type creationAt = string;
 export type uptatedAt = string;
+export type aviableSizes = 'sm' | 'md' | 'lg' | 'xl' | 'xxl'; 
 export interface product {
         id: number,
         title: string,
@@ -16,4 +17,8 @@ export interface category {
         image: string,
         creationAt: creationAt,
         uptatedAt: uptatedAt
+}
+export interface Directive{
+    name: string,
+    instructions: Object
 }

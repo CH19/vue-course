@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import {ref, Ref} from 'vue'
+import {ref} from 'vue'
 let {itsActive} = defineProps<{
     itsActive: boolean
 }>();
-const actual: Ref<boolean> = ref<boolean>(itsActive) 
+const actual = ref<boolean>(itsActive) 
 const hanldeBoolean = () => {
     actual.value = !actual.value;
 }

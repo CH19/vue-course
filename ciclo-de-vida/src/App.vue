@@ -15,9 +15,10 @@ const hanldeBoolean = (cuality: boolean) =>{
 
 <template>
   <h1>Hola mundo</h1>
-    <appCaracteres :itsActive="information.titles" >
+  <p v-custom-size.red="'lg'">hola</p>
+    <appCaractere-s :itsActive="information.titles" >
       <AppMountedd  />
-  </appCaracteres>
+  </appCaractere-s>
   <appCaracteres :itsActive="information.images">
     <appCategories />
   </appCaracteres>
