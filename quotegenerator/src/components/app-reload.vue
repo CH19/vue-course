@@ -3,11 +3,7 @@ import {getData, getDataJson} from '../services/quotes';
 const emits = defineEmits(['quoteReload']);
 const actualizarQuote = () => {
  
-    getDataJson(   {
-    "data":{
-        "joke": "There is no chin behind Chuck Norris' beard. There is only another fist."
-    }
-}).then(e => emits('quoteReload', e.data.joke)).catch(e=> console.error(e));
+    getData().then(e => emits('quoteReload', e.data.joke)).catch(e=> console.error(e));
 };
 </script>
 <template>
