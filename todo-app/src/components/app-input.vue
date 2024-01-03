@@ -32,28 +32,28 @@ const createTaskEnter = (event: KeyboardEvent) => {
   </div>
 </template>
 <style scoped>
-    .input-container{
-        width: 100vw;
-        max-width: 800px;
-    display: grid;
-    grid-template-columns: 1fr .5fr;
-    padding: 20px ;
-    gap: .5rem;
+.input-container {
+  width: 100vw;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  padding: 20px;
+  gap: 0.5rem;
 }
-    .input-container > input[type="text"]:first-of-type{
-        padding:  4px 10px;
-        &:focus-visible{
-            outline: none;
-        }
-    }
-    .input-container button:first-of-type{
-        width: 50%;
-        border: none;
-        background-color: var(--vt-blue);
-        color: var(--vt-c-white-soft);
-        cursor: pointer;
-        &:active{
-            opacity: 50%;
-        }
-    }
+.input-container > input[type='text']:first-of-type {
+  padding: 4px 10px;
+  &:focus-visible {
+    outline: none;
+  }
+}
+.input-container button:first-of-type {
+  width: 50%;
+  border: none;
+  background-color: var(--vt-blue);
+  color: var(--vt-c-white-soft);
+  cursor: pointer;
+  &:active {
+    opacity: 50%;
+  }
+}
 </style>

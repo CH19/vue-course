@@ -5,7 +5,7 @@
   </div>
 </template>
 <style scoped>
-div{
+div {
   width: 100vw;
   max-width: 800px;
   display: grid;

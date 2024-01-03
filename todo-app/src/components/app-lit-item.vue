@@ -8,7 +8,7 @@ const { option } = defineProps<{
   option: Options
 }>()
 const newTodoTasks = ref(todosTasks)
-const allCompleted = ref(true);
+const allCompleted = ref(true)
 const deletedElement = (element: string) => {
   console.log(element)
   todosTasks.value.delete(JSON.parse(element))
@@ -29,17 +29,17 @@ watch(
 )
 </script>
 <template>
-    <transition-group name="list" tag="appList">
-        <div v-for="[_key, todo] of newTodoTasks" :key="_key">
-            <appList  :option="option" @id-completed="deletedElement" :data="todo" />
-        </div>
-    </transition-group>
+  <transition-group name="list" tag="appList">
+    <div v-for="[_key, todo] of newTodoTasks" :key="_key">
+      <appList :option="option" @id-completed="deletedElement" :data="todo" />
+    </div>
+  </transition-group>
 
-<Transition name="slide-fade">
+  <Transition name="slide-fade">
     <div v-if="!allCompleted && newTodoTasks.size > 1" @click="deletedAll" class="deleted-all">
       Deleted All
     </div>
-</Transition>
+  </Transition>
 </template>
 <style scoped>
 .slide-fade-enter-active {
@@ -64,17 +64,17 @@ watch(
   opacity: 0;
   transform: translateX(30px);
 }
-.deleted-all{
-    background-color: var(--vt-blue);
-    color: var(--vt-c-white-soft);
-    width: fit-content;
-    margin: .5rem;
-    padding: .5rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    &:hover{
-        background-color: crimson;
-        transition: all ease-in-out .1s;
-    }
+.deleted-all {
+  background-color: var(--vt-blue);
+  color: var(--vt-c-white-soft);
+  width: fit-content;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: crimson;
+    transition: all ease-in-out 0.1s;
+  }
 }
 </style>

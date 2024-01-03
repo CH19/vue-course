@@ -22,7 +22,7 @@ const deleteElement = () => {
 }
 </script>
 <template>
-        <div
+  <div
     class="todo-container"
     v-if="
       option == 'all' ||
@@ -36,11 +36,10 @@ const deleteElement = () => {
     </div>
     <div class="todo-trash" v-if="newData.completed">
       <div @click="deleteElement">
-        <v-icon name="pr-trash"></v-icon>
+        <v-icon animation="wrench" hover="true" title="delete task"  name="pr-trash"></v-icon>
       </div>
     </div>
   </div>
-
 </template>
 <style scoped>
 .todo-container {
