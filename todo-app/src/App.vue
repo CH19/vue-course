@@ -3,6 +3,7 @@ import appTodo from './components/app-todo.vue'
 import appMenu from './components/app-menu.vue'
 import appInput from './components/app-input.vue'
 import appLitItem from './components/app-lit-item.vue'
+import appFooter from './components/app-footer.vue'
 import { todosTasks } from './services/functions'
 import type { Todo, Options } from './types'
 import { ref } from 'vue'
@@ -29,5 +30,6 @@ const slectedOption = (data: Options) => (optionMenu.value = data)
     <appInput @add-task="addTask" />
     <appLitItem :option="optionMenu" :toods-tasks="todosTasks" />
   </main>
+    <appFooter />
 </template>
 <style scoped></style>

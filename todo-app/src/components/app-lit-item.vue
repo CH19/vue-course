@@ -29,17 +29,19 @@ watch(
 )
 </script>
 <template>
-  <transition-group name="list" tag="appList">
+    <div class="items-container">
+        <transition-group name="list" tag="appList">
     <div v-for="[_key, todo] of newTodoTasks" :key="_key">
       <appList :option="option" @id-completed="deletedElement" :data="todo" />
     </div>
   </transition-group>
-
   <Transition name="slide-fade">
     <div v-if="!allCompleted && newTodoTasks.size > 1" @click="deletedAll" class="deleted-all">
       Deleted All
     </div>
   </Transition>
+    </div>
+
 </template>
 <style scoped>
 .slide-fade-enter-active {
