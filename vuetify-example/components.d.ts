@@ -11,8 +11,12 @@ declare module 'vue' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Menu: typeof import('./src/components/menu.vue')['default']
     Menuvv: typeof import('./src/components/menuvv.vue')['default']
+    NotFound: typeof import('./src/components/NotFound.vue')['default']
     Qrcode: typeof import('./src/components/qrcode.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Text: typeof import('./src/components/text.vue')['default']
     Texti: typeof import('./src/components/texti.vue')['default']
+    User: typeof import('./src/components/User.vue')['default']
   }
 }
