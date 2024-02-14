@@ -40,7 +40,7 @@ const actualTheme = computed(()=> {
 function toogleTheme(){
   console.clear
   console.log(theme.global.name.value)
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+  theme.global.name.value = actualTheme.value == 'co-sun' ? 'light' : 'dark'
 }
 </script>
 <style scoped>
